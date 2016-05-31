@@ -1,0 +1,28 @@
+<head>
+	<script src=https://code.jquery.com/jquery-3.0.0-beta1.js
+		
+	></script>
+	<link rel="stylesheet" href="
+https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+	<script>
+		$.getJSON('/api',function(houses){
+			console.log(houses);
+			houses.things.forEach(function(h){
+				$('#houses').append(`
+					<h3>${h.name}</h3>
+					<h4>${h.member}</h4>
+				`)
+			})
+		})
+	</script>
+</head>
+<body>
+<!--	House Mormont - Here We Stand-->
+	<h1>
+		Hear Me Roar
+	</h1>
+	<div class="container">
+		<div id="houses"></div>	
+	</div>
+	
+</body>
